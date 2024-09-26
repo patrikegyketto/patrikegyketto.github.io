@@ -10,6 +10,7 @@ Itt van Rugos Beke
 
 ## Blokkok
 
+MÉÁG IDE ÍRZTAM VLAMIT
 
 
 
