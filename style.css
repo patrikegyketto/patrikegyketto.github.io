@@ -1,4 +1,22 @@
-body{
-    background-color: brown;
-    color: burlywood;
+body {
+    text-align: justify;
+}
+ 
+#keret {
+    background-color: rgba(234, 200, 150, 0.9);
+}
+ 
+#kep1 {
+    padding: 20px;
+}
+ 
+.forras {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 30px;
+}
+ 
+.forras:hover {
+    text-decoration: underline;
 }
