@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Volkswagen kapcsolat - Térkép és elérhetőségek">
+    <meta name="keywords" content="Volkswagen, kapcsolat, térkép, elérhetőség, szerviz, ügyfélszolgálat">
+    <meta name="author" content="Volkswagen">
+    <title>Kapcsolat | Volkswagen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <style>
+        /* Alap stílusok a térképhez */
+        #map {
+            height: 300px; /* Csökkentett magasság */
+            width: 100%;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex; /* Flexbox a két oszlophoz */
+            gap: 20px; /* Térköz a két oszlop között */
+        }
+        .contact-form {
+            flex: 1; /* Az űrlap oszlopnak 1-es flex értéke van */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact-form input, .contact-form textarea, .contact-form button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .map-container {
+            flex: 1; /* A térkép oszlopnak 1-es flex értéke van */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigáció -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="vw-golf-webpic-1948x1096-240719.jpg" alt="Volkswagen" />
+            </div>
+            <ul>
+                <li><a href="index.html#home">Kezdőlap</a></li>
+                <li><a href="index.html#models">Modellek</a></li>
+                <li><a href="index.html#services">Szolgáltatások</a></li>
+                <li><a href="index.html#contact">Kapcsolat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Kapcsolat szekció -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Kapcsolat</h2>
+
+            <!-- Kapcsolat űrlap -->
+            <div class="contact-form">
+                <form action="#" class="contact-form">
+                    <input type="text" name="name" placeholder="Neved" required>
+                    <input type="email" name="email" placeholder="Email cím" required>
+                    <textarea name="message" placeholder="Üzenet" required></textarea>
+                    <button type="submit">Üzenet küldése</button>
+                </form>
+            </div>
+
+            <!-- Interaktív térkép -->
+            <div class="map-container">
+                <h3>Találj meg minket a térképen</h3>
+                <div id="map"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Volkswagen. Minden jog fenntartva.</p>
+            <div class="social-icons">
+                <a href="#"><img src="2021_Facebook_icon.svg.webp" alt="Facebook"></a>
+                <a href="#"><img src="67v23AEj_400x400.jpg" alt="Twitter"></a>
+                <a href="#"><img src="Instagram_logo_2022.svg.webp" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Google Maps script -->
+    <script>
+        function initMap() {
+            // A térkép helye
+            var location = { lat: 47.4979, lng: 19.0402 }; // Példa koordináták (Budapest központja)
+
+            // A térkép létrehozása
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 13,
+                center: location
+            });
+
+            // Markert adunk hozzá a térképhez
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: 'Volkswagen Szalon'
+            });
+        }
+    </script>
+
+</body>
+</html>
